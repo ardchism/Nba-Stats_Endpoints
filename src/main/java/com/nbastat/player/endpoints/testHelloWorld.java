@@ -35,7 +35,9 @@ public class testHelloWorld {
 		try {
 			URIBuilder builder = new URIBuilder("http://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=a&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2015-16&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision=&Weight=");
 			builder.getQueryParams().forEach(parm -> {
-				System.out.println(parm.toString());
+				
+				if(parm.getValue() != null && !parm.getValue().isEmpty())
+					System.out.println(parm.toString());
 			});
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
