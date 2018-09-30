@@ -2,9 +2,9 @@
 	"headers" : {
 		"host" : "stats.nba.com",
 		"referer" : "http://stats.nba.com/players/t…17&SeasonType=Regular%20Season",
-		"user-agent" : "Mozilla/5.0 (X11; Fedora; Linu…) Gecko/20100101 Firefox/59.0",
-		"x-nba-stats-origin" : "stats",
-		"x-nba-stats-token" : "true"
+		"userAgent" : "Mozilla/5.0 (X11; Fedora; Linu…) Gecko/20100101 Firefox/59.0",
+		"xnbastatsOrigin" : "stats",
+		"xnbastatsToken" : "true"
 	},
 	"endpoints" : [
 		{
@@ -938,7 +938,7 @@
 		},
 		{
 			"name" : "OpponentTeamID",
-			"super" : "TeamID",
+			"superObject" : "TeamID",
 			"defaultValue" : "0"
 		},
 		{
@@ -1093,12 +1093,12 @@
 		},
 		{
 			"name" : "VsConference",
-			"super" : "Conference",
+			"superObject" : "Conference",
 			"defaultValue" : ""
 		},
 		{
 			"name" : "VsDivision",
-			"super" : "Division",
+			"superObject" : "Division",
 			"defaultValue" : ""
 		},
 		{

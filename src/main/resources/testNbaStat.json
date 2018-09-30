@@ -1,0 +1,114 @@
+{
+	"headers" : {
+		"host" : "stats.nba.com",
+		"referer" : "http://stats.nba.com/players/t…17&SeasonType=Regular%20Season",
+		"userAgent" : "Mozilla/5.0 (X11; Fedora; Linu…) Gecko/20100101 Firefox/59.0",
+		"xnbastatsOrigin" : "stats",
+		"xnbastatsToken" : "true"
+	},
+	"endpoints" : [
+		{
+			"name" : "league Leaders",
+			"url" : "http://stats.nba.com/stats/leaguedashplayerstats",
+			"requiredParameters" : [
+				"MeasureType",
+				"PerMode",
+				"Season",
+				"SeasonType"
+			],
+			"parameters" : [
+				"College",
+				"Conference",
+				"Country",
+				"MeasureType",
+				"PerMode",
+				"Season",
+				"SeasonType"
+			]
+		}
+	],
+	"parameters" : [
+		{
+			"name" : "MeasureType",
+			"defaultValue" : "Base",
+			"values" : [
+				"Defense",
+				"Usage",
+				"Opponent",
+				"Scoring",
+				"Four Factors",
+				"Misc",
+				"Advanced",
+				"Base"
+			]
+		},
+		{
+			"name" : "PerMode",
+			"defaultValue" : "PerGame",
+			"values" : [
+				"Per100Plays",
+				"Per100Possessions",
+				"PerPlay",
+				"PerPossession",
+				"PerMinute",
+				"Per36",
+				"Per40",
+				"Per48",
+				"MinutesPer",
+				"PerGame",
+				"Totals"
+			]
+		},
+		{
+			"name" : "Season",
+			"defaultValue" : "2018",
+			"values" : [
+				"1951 - 2018"
+			]
+		},
+		{
+			"name" : "SeasonType",
+			"defaultValue" : "",
+			"values" : [
+				"Regular Season",
+				"Pre Season",
+				"Playoffs",
+				"All Star"
+			]
+		},
+		{
+			"name" : "College",
+			"defaultValue" : "",
+			"values" : [
+				"All Affiliations",
+				"High School",
+				"No College",
+				"Acadia (CAN)",
+				"Adams State",
+				"Adelphi",
+				"Air Force",
+				"Akron"
+			]
+		},
+		{
+			"name" : "Conference",
+			"defaultValue" : "",
+			"values" : [
+				"East",
+				"West"
+			]
+		},
+		{
+			"name" : "Country",
+			"defaultValue" : "",
+			"values" : [
+				"All Countries",
+				"International",
+				"Angola",
+				"Argentina",
+				"Australia",
+				"Belize"
+			]
+		}
+	]
+}
