@@ -82,6 +82,7 @@ public class NBAStatEndpointsDefinitionFactoryTests {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	@Test
 	public void buildFromFileNameGrumpyPathFileNotFound() {
 		

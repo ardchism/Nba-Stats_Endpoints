@@ -1,8 +1,5 @@
 package com.nbastat.player.domain.builders;
 
-import java.util.List;
-
-import com.nbastat.player.generators.domain.NBAStatEndpointsDefinition.NBAStatParameter;
 import com.nbastat.player.generators.domain.NBAStatEndpointsDefinition.NBAStatHeaders;
 
 public class NBAStatHeadersBuilder {
