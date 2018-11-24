@@ -33,7 +33,7 @@ public class testHelloWorld {
 		restTemplate.setInterceptors(interceptors);
 
 		try {
-			URIBuilder builder = new URIBuilder("http://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=a&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2015-16&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision=&Weight=");
+			URIBuilder builder = new URIBuilder("https://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=a&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2015-16&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision=&Weight=");
 			builder.getQueryParams().forEach(parm -> {
 				
 				if(parm.getValue() != null && !parm.getValue().isEmpty())
@@ -45,7 +45,7 @@ public class testHelloWorld {
 		}
 
 		System.out.println("Starting get json.");
-		LeagueDashPlayerStatsResponse leagueDashPlayerStatsResponse = restTemplate.getForObject("http://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2015-16&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision=&Weight=", LeagueDashPlayerStatsResponse.class);
+		LeagueDashPlayerStatsResponse leagueDashPlayerStatsResponse = restTemplate.getForObject("https://stats.nba.com/stats/leaguedashplayerstats?College=&Conference=East&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&LeagueID=00&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2015-16&SeasonSegment=&SeasonType=Regular+Season&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision=&Weight=", LeagueDashPlayerStatsResponse.class);
 		System.out.println("End get json.");
 		return leagueDashPlayerStatsResponse.getResultSets()[0].findResultsByPlayerId(201166).toString();
 	}
