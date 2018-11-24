@@ -115,6 +115,10 @@
 								</goals>
 								<configuration>
 									<mainClass>com.nbastat.player.generators.DomainBuildersGenerator</mainClass>
+									<arguments>
+										<argument>src/main/java/com/nbastat/player/domain</argument>
+										<argument>src/main/java/com/nbastat/player/generators/domain</argument>
+									</arguments>
 								</configuration>
 							</execution>
 						   <execution>

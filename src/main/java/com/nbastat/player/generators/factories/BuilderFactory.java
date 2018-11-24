@@ -4,8 +4,10 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import org.jboss.forge.roaster.Roaster;
@@ -48,14 +50,24 @@ public class BuilderFactory {
 		//TODO: Create a with method for each field.
 		Stream<Field> fields = Arrays.stream(currentClass.getDeclaredFields());
 		fields.forEach(field -> {
+			
+				addFieldImports(javaClass, field);
+				
 				String fieldType = field.getType().getSimpleName();
 				String fieldName = field.getName().substring(0, 1).toUpperCase() + field.getName().substring(1);
-				if(fieldType.contains("List")) {
+				if(fieldType.contains("List") || fieldType.contains("Set")) {
 	
 					String listWithType = field.getGenericType().toString().replace("$", ".");
-					String listTypeFullyQualified = listWithType.substring(listWithType.indexOf("<") + 1, listWithType.indexOf(">"));
-					String listType = listTypeFullyQualified.substring(listTypeFullyQualified.lastIndexOf(".") + 1);
-					javaClass.addImport(listTypeFullyQualified);
+					
+					String listTypeFullyQualified = listWithType.substring(listWithType.indexOf("<") + 1, listWithType.lastIndexOf(">"));
+					
+					String listType;
+					
+					if(listTypeFullyQualified.contains("<")) {
+						listType = listTypeFullyQualified.substring(0, listTypeFullyQualified.indexOf("<") + 1) + listTypeFullyQualified.substring(listTypeFullyQualified.indexOf("<") + 1, listTypeFullyQualified.lastIndexOf(">")).substring(listTypeFullyQualified.substring(listTypeFullyQualified.indexOf("<") + 1, listTypeFullyQualified.lastIndexOf(">")).lastIndexOf(".") + 1) + ">";
+					}else {
+						listType = listTypeFullyQualified.substring(listTypeFullyQualified.lastIndexOf(".") + 1);
+					}
 					
 					javaClass.addMethod()
 						.setName("with" + fieldName)
@@ -65,10 +77,6 @@ public class BuilderFactory {
 						.addParameter(listType, field.getName());
 					
 				} else {
-					
-					String fieldTypeImport = field.getType().getName().replace("$", ".");
-					
-					javaClass.addImport(fieldTypeImport);
 
 					javaClass.addMethod()
 						.setName("with" + fieldName)
@@ -91,6 +99,56 @@ public class BuilderFactory {
 		});
 		
 		return builders;
+	}
+	
+	private void addFieldImports(JavaClassSource javaClass, Field field) {
+		
+		String fieldType = field.getGenericType().toString().replace("$", ".");
+		
+		if(fieldType.contains("<")) {
+			
+			Set<String> imports = getListImports(fieldType);
+			
+			imports.forEach(importString -> {
+				javaClass.addImport(importString);	
+			});
+			
+			
+		} else {
+			
+			String fieldTypeImport = field.getType().getName().replace("$", ".");
+			
+			javaClass.addImport(fieldTypeImport);
+
+		
+		}
+		
+	}
+	
+	private Set<String> getListImports(String fieldType){
+		
+		Set<String> imports = new HashSet<>();
+		
+		String listTypeFullyQualified = fieldType.substring(fieldType.indexOf("<") + 1, fieldType.lastIndexOf(">"));
+			
+		if(listTypeFullyQualified.contains("<")) {
+				
+			String collectionImplementation = listTypeFullyQualified.substring(0, listTypeFullyQualified.indexOf("<"));
+				
+			imports.add(collectionImplementation);
+				
+			String collectionType = listTypeFullyQualified.substring(listTypeFullyQualified.indexOf("<") + 1, listTypeFullyQualified.indexOf(">"));
+			
+			imports.add(collectionType);
+				
+		} else {
+			
+			imports.add(listTypeFullyQualified);
+			
+		}
+		
+		return new HashSet<>();
+		
 	}
 	
 }
