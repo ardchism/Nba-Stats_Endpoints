@@ -11,13 +11,12 @@ import java.util.stream.Stream;
 
 import com.nbastat.player.generators.factories.BuilderFactory;
 
-import lombok.SneakyThrows;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class DomainBuildersGenerator {
 
 	public static void main(String[] args){
-
-		Map<String, String> builders = new HashMap<>();
 		
 		if(args.length == 0) {
 			throw new RuntimeException("Minimum of 1 path parameter required....");
@@ -25,6 +24,8 @@ public class DomainBuildersGenerator {
 		
 		
 		for(String targetPackagePath : args){
+			
+			Map<String, String> builders = new HashMap<>();
 			
 			Stream<Path> paths;
 			try {
@@ -62,7 +63,7 @@ public class DomainBuildersGenerator {
 					}
 					
 					Files.write(Paths.get(filePath), value.getBytes());
-					System.out.println("Builder written to " + filePath);
+					log.info("Builder written to " + filePath);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
