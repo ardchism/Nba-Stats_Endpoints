@@ -13,15 +13,15 @@ public class NbaStatResultSet {
 
     //business methods
     public List<String> findResultsByPlayerId(Integer playerId) {
-        Integer playerIdIndex = Headers.indexOf("PLAYER_ID");
+        int playerIdIndex = Headers.indexOf("PLAYER_ID");
         if(playerIdIndex < 0) {
             throw new RuntimeException("PLAYER ID is not present in this result set");
         }
         List<String> playerRow = null;
-        for(int x = 0; x < rowSet.size(); x++) {
-            if(Integer.parseInt(rowSet.get(x)
-                                      .get(playerIdIndex)) == playerId) {
-                playerRow = rowSet.get(x);
+        for(List<String> strings : rowSet) {
+            if(Integer.parseInt(strings
+                                        .get(playerIdIndex)) == playerId) {
+                playerRow = strings;
             }
         }
         if(playerRow == null) {

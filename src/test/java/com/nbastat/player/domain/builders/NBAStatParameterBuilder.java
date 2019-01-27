@@ -33,10 +33,8 @@ public class NBAStatParameterBuilder {
     }
 
     public NBAStatParameterBuilder withValues(List<String> values) {
-        values.forEach(value -> {
-            builtObject.getValues()
-                       .add(value);
-        });
+        values.forEach(value -> builtObject.getValues()
+                                           .add(value));
         return this;
     }
 

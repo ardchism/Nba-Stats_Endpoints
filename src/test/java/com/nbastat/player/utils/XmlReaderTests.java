@@ -2,15 +2,12 @@ package com.nbastat.player.utils;
 
 import org.junit.Test;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class XmlReaderTests {
 
     @Test
-    public void readFileToStringHappyPath() throws URISyntaxException, IOException {
+    public void readFileToStringHappyPath() {
 
         String fileName = "testString.txt";
         String expectedReturnedString = "testing123456\n";

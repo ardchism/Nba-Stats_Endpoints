@@ -13,8 +13,7 @@ public class NBAStatEndpointsDefinitionFactory {
         XmlReader xmlReader = new XmlReader();
         String nbaStatJson = xmlReader.readXmlFromFile(fileName);
         ObjectMapper mapper = new ObjectMapper();
-        NBAStatEndpointsDefinition nbaStatEndpointsDefinition = mapper.readValue(nbaStatJson,
-                                                                                 NBAStatEndpointsDefinition.class);
-        return nbaStatEndpointsDefinition;
+        return mapper.readValue(nbaStatJson,
+                                NBAStatEndpointsDefinition.class);
     }
 }

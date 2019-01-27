@@ -75,12 +75,12 @@ public class NBAStatEndpointsDefinitionFactoryTests {
                                                             .withValues(values)
                                                             .get();
 
-        NBAStatEndpointsDefinition dummyNbaStatsEndointsDefinition = new NBAStatEndpointsDefinition();
-        dummyNbaStatsEndointsDefinition.setHeaders(headers);
-        dummyNbaStatsEndointsDefinition.getEndpoints()
+        NBAStatEndpointsDefinition dummyNbaStatsEndpointsDefinition = new NBAStatEndpointsDefinition();
+        dummyNbaStatsEndpointsDefinition.setHeaders(headers);
+        dummyNbaStatsEndpointsDefinition.getEndpoints()
                                        .add(endpoints);
-        dummyNbaStatsEndointsDefinition.getParameters()
-                                       .add(parameter);
+        dummyNbaStatsEndpointsDefinition.getParameters()
+                                        .add(parameter);
 
         NBAStatEndpointsDefinitionFactory nbaStatEndpointsDefinitionFactory = new NBAStatEndpointsDefinitionFactory();
 
@@ -91,14 +91,14 @@ public class NBAStatEndpointsDefinitionFactoryTests {
 
         assertThat(nbaStatEndpointsDefinition.getEndpoints()
                                              .size()).isEqualTo(
-                dummyNbaStatsEndointsDefinition.getEndpoints()
-                                               .size());
+                dummyNbaStatsEndpointsDefinition.getEndpoints()
+                                                .size());
         for(int x = 0; x < nbaStatEndpointsDefinition.getEndpoints()
                                                      .size(); x++) {
             assertThat(nbaStatEndpointsDefinition.getEndpoints()
                                                  .get(x)).isEqualTo(
-                    dummyNbaStatsEndointsDefinition.getEndpoints()
-                                                   .get(x));
+                    dummyNbaStatsEndpointsDefinition.getEndpoints()
+                                                    .get(x));
         }
 
     }

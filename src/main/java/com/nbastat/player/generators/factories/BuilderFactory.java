@@ -89,6 +89,7 @@ public class BuilderFactory {
 
                 }
 
+                assert listTypeGenericClass != null;
                 SourceCodeMethod withMethod = SourceCodeMethodBuilder.Builder(
                         MethodAccessLevel.PUBLIC, false, "with" + fieldName,
                         "builtObject.get" + fieldName + "().add(" + field.getName() + ");\n return this;")

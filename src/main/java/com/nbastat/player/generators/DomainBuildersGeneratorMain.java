@@ -1,15 +1,11 @@
 package com.nbastat.player.generators;
 
-import com.nbastat.player.generators.factories.BuilderFactory;
 import lombok.SneakyThrows;
 
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -21,7 +17,8 @@ public class DomainBuildersGeneratorMain {
             throw new RuntimeException("Minimum of 1 path parameter required....");
         }
 
-        Arrays.stream(args).forEach(domainPath -> generateBuilders(domainPath));
+        Arrays.stream(args)
+              .forEach(DomainBuildersGeneratorMain::generateBuilders);
 
     }
 
@@ -32,7 +29,7 @@ public class DomainBuildersGeneratorMain {
         Map<String, String> buildersMap = DomainBuildersGenerator.generateBuilders(pathStream);
         pathStream.close();
 
-        buildersMap.forEach((key, value) -> DomainBuildersGenerator.writeSourceCodeToFile(key, value));
+        buildersMap.forEach(DomainBuildersGenerator::writeSourceCodeToFile);
 
     }
 

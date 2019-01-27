@@ -34,6 +34,7 @@ public class DomainBuildersGenerator {
         return builderFactory.build(fullClassPackage);
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     @SneakyThrows
     public static void writeSourceCodeToFile(String className, String code){
 
