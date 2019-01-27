@@ -1,9 +1,6 @@
 package com.nbastat.player.endpoints;
 
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-
+import com.nbastat.player.responses.LeagueDashPlayerStatsResponse;
 import org.apache.http.client.utils.URIBuilder;
 import org.springframework.boot.devtools.remote.client.HttpHeaderInterceptor;
 import org.springframework.http.MediaType;
@@ -12,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.nbastat.player.responses.LeagueDashPlayerStatsResponse;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class testHelloWorld {
