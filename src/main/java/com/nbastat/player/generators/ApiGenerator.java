@@ -4,14 +4,12 @@ import lombok.SneakyThrows;
 
 public class ApiGenerator {
 
-	@SneakyThrows
-	public static void main(String[] args) {
+    @SneakyThrows
+    public static void main(String[] args) {
 
-		System.out.println("Starting code generation");
-		
-		
-		
-		
-	}
+        System.out.println("Starting code generation");
+
+
+    }
 
 }
