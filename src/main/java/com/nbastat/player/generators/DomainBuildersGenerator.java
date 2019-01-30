@@ -20,6 +20,7 @@ public class DomainBuildersGenerator {
 
         pathStream.map(file -> file.toString()
                                    .replace("src/main/java/", "")
+                                   .replace("src/test/java/", "")
                                    .replace("/", ".")
                                    .replace(".java", ""))
                   .forEach(fullClassPackage -> builders.putAll(createBuilder(fullClassPackage)));
@@ -29,7 +30,7 @@ public class DomainBuildersGenerator {
     }
 
     @SneakyThrows
-    private  static Map<String, String> createBuilder(String fullClassPackage){
+    public static Map<String, String> createBuilder(String fullClassPackage) {
         BuilderFactory builderFactory = new BuilderFactory();
         return builderFactory.build(fullClassPackage);
     }

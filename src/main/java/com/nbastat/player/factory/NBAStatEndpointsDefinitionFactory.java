@@ -1,4 +1,4 @@
-package com.nbastat.player.generators.domain.factory;
+package com.nbastat.player.factory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nbastat.player.generators.domain.NBAStatEndpointsDefinition;

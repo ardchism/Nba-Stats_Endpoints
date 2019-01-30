@@ -1,4 +1,4 @@
-package com.nbastat.player.generators.domain.factory;
+package com.nbastat.player.factory;
 
 import com.nbastat.player.domain.builders.NBAStatHeadersBuilder;
 import com.nbastat.player.domain.builders.NBAStatParameterBuilder;
