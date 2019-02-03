@@ -76,16 +76,20 @@ public class NBAStatEndpointsDefinitionFactoryTests {
 
         assertThat(nbaStatEndpointsDefinition.getHeaders()).isEqualTo(headers);
 
-        assertThat(nbaStatEndpointsDefinition.getEndpoints()
-                                             .size()).isEqualTo(
-                dummyNbaStatsEndpointsDefinition.getEndpoints()
-                                                .size());
+        assertThat(
+                nbaStatEndpointsDefinition.getEndpoints()
+                                          .size())
+                .isEqualTo(dummyNbaStatsEndpointsDefinition.getEndpoints()
+                                                           .size()
+                );
         for(int x = 0; x < nbaStatEndpointsDefinition.getEndpoints()
                                                      .size(); x++) {
-            assertThat(nbaStatEndpointsDefinition.getEndpoints()
-                                                 .get(x))
+            assertThat(
+                    nbaStatEndpointsDefinition.getEndpoints()
+                                              .get(x))
                     .isEqualTo(dummyNbaStatsEndpointsDefinition.getEndpoints()
-                                                               .get(x));
+                                                               .get(x)
+                    );
         }
 
     }
