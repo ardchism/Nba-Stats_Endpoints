@@ -50,6 +50,10 @@ public class DomainBuildersGeneratorTests {
                 "\t\tbuiltObject.getPayerStats().add(payerStats);\n" +
                 "\t\treturn this;\n" +
                 "\t}\n" +
+                "\n" +
+                " \tpublic BasicPOJO get() {\n" +
+                " \t\treturn builtObject;\n" +
+                " \t}\n" +
                 "}";
 
         Map<String, String> sourceCode = DomainBuildersGenerator.createBuilder(testClass);
@@ -61,7 +65,7 @@ public class DomainBuildersGeneratorTests {
 
         assertThat(code).isNotNull();
 
-        assertThat(code).isEqualTo(expectedBuilderSourceCode);
+        assertThat(code).isEqualToNormalizingWhitespace(expectedBuilderSourceCode);
 
 
     }
@@ -99,6 +103,11 @@ public class DomainBuildersGeneratorTests {
                         "                builtObject.getStats().add(stats);\n" +
                         "                return this;\n" +
                         "            }\n" +
+                        "\n" +
+                        "           public NestedPOJO get() {\n" +
+                        "               return builtObject;\n" +
+                        "           }\n" +
+                        "\n" +
                         "        }";
 
         Map<String, String> sourceCode = DomainBuildersGenerator.createBuilder(testClass);

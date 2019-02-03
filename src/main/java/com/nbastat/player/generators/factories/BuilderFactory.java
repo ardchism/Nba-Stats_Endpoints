@@ -114,10 +114,17 @@ public class BuilderFactory {
 
         });
 
+        SourceCodeMethod getMethod = SourceCodeMethodBuilder.Builder(MethodAccessLevel.PUBLIC,
+                                                                     Boolean.FALSE, "get",
+                                                                     "return builtObject;")
+                                                            .withMethodReturnType(currentClass)
+                                                            .build();
+
         SourceCode sourceCode = SourceCodeBuilder.Builder(className, packageName)
                                                  .withSourceCodeConstructor(constructor)
                                                  .withSourceCodeFields(sourceCodeFields)
                                                  .withSourceCodeMethods(sourceCodeMethods)
+                                                 .withSourceCodeMethod(getMethod)
                                                  .build();
 
 
