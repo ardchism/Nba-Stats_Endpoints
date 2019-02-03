@@ -1,12 +1,12 @@
 package com.nbastat.player.generators;
 
+import com.nbastat.player.generators.domain.GeneratedClasses;
 import lombok.SneakyThrows;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Map;
 import java.util.stream.Stream;
 
 public class DomainBuildersGeneratorMain {
@@ -26,10 +26,10 @@ public class DomainBuildersGeneratorMain {
     private static void generateBuilders(String targetPackagePath){
 
         Stream<Path> pathStream = Files.walk(Paths.get(targetPackagePath), 1).filter(Files::isRegularFile);
-        Map<String, String> buildersMap = DomainBuildersGenerator.generateBuilders(pathStream);
+        GeneratedClasses generatedClasses = DomainBuildersGenerator.generateBuilders(pathStream);
         pathStream.close();
 
-        buildersMap.forEach(DomainBuildersGenerator::writeSourceCodeToFile);
+        generatedClasses.writeClasses();
 
     }
 

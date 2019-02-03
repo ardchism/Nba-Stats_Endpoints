@@ -142,7 +142,7 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>com.nbastat.player.generators.ApiGenerator</mainClass>
+                            <mainClass>com.nbastat.player.generators.ApiGeneratorMain</mainClass>
                         </configuration>
                     </execution>
                 </executions>

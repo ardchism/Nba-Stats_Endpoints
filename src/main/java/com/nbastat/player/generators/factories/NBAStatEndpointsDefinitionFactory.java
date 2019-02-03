@@ -1,8 +1,8 @@
-package com.nbastat.player.factory;
+package com.nbastat.player.generators.factories;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nbastat.player.generators.domain.NBAStatEndpointsDefinition;
-import com.nbastat.player.utils.XmlReader;
+import com.nbastat.player.utils.FileReader;
 import lombok.SneakyThrows;
 
 public class NBAStatEndpointsDefinitionFactory {
@@ -10,8 +10,8 @@ public class NBAStatEndpointsDefinitionFactory {
     @SneakyThrows
     public NBAStatEndpointsDefinition buildFromJsonFile(String fileName) {
 
-        XmlReader xmlReader = new XmlReader();
-        String nbaStatJson = xmlReader.readXmlFromFile(fileName);
+        FileReader fileReader = new FileReader();
+        String nbaStatJson = fileReader.getStringFromFile(fileName);
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(nbaStatJson,
                                 NBAStatEndpointsDefinition.class);

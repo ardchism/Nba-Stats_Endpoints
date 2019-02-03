@@ -1,4 +1,4 @@
-package com.nbastat.player.factory;
+package com.nbastat.player.generators.factories;
 
 import com.nbastat.player.generators.domain.NBAStatEndpointsDefinition;
 import com.nbastat.player.generators.domain.NBAStatEndpointsDefinition.NBAStatEndpoint;

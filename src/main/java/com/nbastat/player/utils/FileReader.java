@@ -8,10 +8,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-public class XmlReader {
+public class FileReader {
 
     @SneakyThrows
-    public String readXmlFromFile(String fileName) {
+    public String getStringFromFile(String fileName) {
 
         URL url = getClass().getClassLoader()
                             .getResource(fileName);

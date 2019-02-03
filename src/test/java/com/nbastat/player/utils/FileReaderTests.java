@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class XmlReaderTests {
+public class FileReaderTests {
 
     @Test
     public void readFileToStringHappyPath() {
@@ -12,9 +12,9 @@ public class XmlReaderTests {
         String fileName = "testString.txt";
         String expectedReturnedString = "testing123456\n";
 
-        XmlReader xmlReader = new XmlReader();
+        FileReader fileReader = new FileReader();
 
-        String returnedFile = xmlReader.readXmlFromFile(fileName);
+        String returnedFile = fileReader.getStringFromFile(fileName);
 
         assertThat(returnedFile).isEqualTo(expectedReturnedString);
 
@@ -25,10 +25,10 @@ public class XmlReaderTests {
 
         String fileName = "testStringa.txt";
 
-        XmlReader xmlReader = new XmlReader();
+        FileReader fileReader = new FileReader();
 
         try {
-            xmlReader.readXmlFromFile(fileName);
+            fileReader.getStringFromFile(fileName);
             throw new RuntimeException("Test Should Not Reach This Point");
         } catch(Exception e) {
             assertThat(e.getMessage()).isEqualTo("File Not Found At : " + fileName);

@@ -1,17 +1,17 @@
 package com.nbastat.player.generators;
 
+import com.nbastat.player.generators.domain.GeneratedClasses;
 import lombok.SneakyThrows;
 import org.junit.Test;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Map;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DomainBuildersGeneratorTests {
+public class DomainGeneratedClassesGeneratorTests {
 
     @Test
     public void generateBuilderNoInnerClassesHappyPath() {
@@ -56,11 +56,11 @@ public class DomainBuildersGeneratorTests {
                 " \t}\n" +
                 "}";
 
-        Map<String, String> sourceCode = DomainBuildersGenerator.createBuilder(testClass);
+        GeneratedClasses sourceCode = DomainBuildersGenerator.createBuilder(testClass);
 
         assertThat(sourceCode.size()).isEqualTo(1);
 
-        String code = sourceCode.get(
+        String code = sourceCode.getClassName2SourceCodeMap().get(
                 "com/nbastat/player/generators/testPOJO/builders/BasicPOJOBuilder");
 
         assertThat(code).isNotNull();
@@ -110,7 +110,7 @@ public class DomainBuildersGeneratorTests {
                         "\n" +
                         "        }";
 
-        Map<String, String> sourceCode = DomainBuildersGenerator.createBuilder(testClass);
+        GeneratedClasses sourceCode = DomainBuildersGenerator.createBuilder(testClass);
 
         assertThat(sourceCode.size()).isEqualTo(3);
 
@@ -132,7 +132,7 @@ public class DomainBuildersGeneratorTests {
         Stream<Path> pathStream = Files.walk(Paths.get(testPackage), 1)
                                        .filter(Files::isRegularFile);
 
-        Map<String, String> sourceCode = DomainBuildersGenerator.generateBuilders(pathStream);
+        GeneratedClasses sourceCode = DomainBuildersGenerator.generateBuilders(pathStream);
 
         assertThat(sourceCode.size()).isEqualTo(4);
 

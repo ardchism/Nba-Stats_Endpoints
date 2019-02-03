@@ -4,23 +4,26 @@ import com.failfast.sourcewriter.domain.*;
 import com.failfast.sourcewriter.domain.SourceCode.SourceCodeBuilder;
 import com.failfast.sourcewriter.domain.SourceCodeField.SourceCodeFieldBuilder;
 import com.failfast.sourcewriter.domain.SourceCodeMethod.SourceCodeMethodBuilder;
+import com.nbastat.player.generators.domain.GeneratedClasses;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class BuilderFactory {
 
-    public Map<String, String> build(String fullClassName) throws ClassNotFoundException {
+    public GeneratedClasses build(String fullClassName) throws ClassNotFoundException {
         Class<?> currentClass = Class.forName(fullClassName);
         return buildFromClass(currentClass, fullClassName);
     }
 
-    private Map<String, String> buildFromClass(Class<?> currentClass, String fullClassName) {
+    private GeneratedClasses buildFromClass(Class<?> currentClass, String fullClassName) {
 
-        Map<String, String> builders = new HashMap<>();
+        GeneratedClasses generatedClasses = new GeneratedClasses();
 
         List<SourceCodeField> sourceCodeFields = new ArrayList<>();
         List<SourceCodeMethod> sourceCodeMethods = new ArrayList<>();
@@ -128,17 +131,17 @@ public class BuilderFactory {
                                                  .build();
 
 
-        builders.put(packageName.replace(".", "/") + "/" + className,
+        generatedClasses.put(packageName.replace(".", "/") + "/" + className,
                      sourceCode.getFormattedSourceCode());
 
         currentClass.getDeclaredClasses();
         Stream<Class<?>> innerClasses = Arrays.stream(currentClass.getDeclaredClasses());
         innerClasses.forEach(innerClass -> {
             System.out.println();
-            builders.putAll(buildFromClass(innerClass, fullClassName));
+            generatedClasses.putAll(buildFromClass(innerClass, fullClassName));
         });
 
-        return builders;
+        return generatedClasses;
     }
 
 }
