@@ -1,0 +1,16 @@
+requestheaders:
+  headers:
+    host: "stats.nba.com"
+    referer: "http://stats.nba.com/players/t…17&SeasonType=Regular%20Season"
+    userAgent: "Mozilla/5.0 (X11; Fedora; Linu…) Gecko/20100101 Firefox/59.0"
+    xnbastatsOrigin: "stats"
+    xnbastatsToken: "true"
+    Accept: "application/json"
+    Accept-Encoding: "utf-8"
+    Accept-Language: "en-US,en;q=0.5"
+    Connection: "keep-alive"
+    Host: "stats.nba.com"
+    Referer: "http://stats.nba.com/players/t…17&SeasonType=Regular%20Season"
+    User-Agent: "Mozilla/5.0 (X11; Fedora; Linu…) Gecko/20100101 Firefox/59.0"
+    x-nba-stats-origin: "stats"
+    x-nba-stats-token: "true"

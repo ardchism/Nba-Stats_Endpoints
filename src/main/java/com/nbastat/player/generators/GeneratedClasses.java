@@ -1,4 +1,4 @@
-package com.nbastat.player.generators.domain;
+package com.nbastat.player.generators;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -29,9 +29,7 @@ public class GeneratedClasses {
 
     public void putAll(Collection<GeneratedClasses> generatedClasses) {
 
-        generatedClasses.forEach(generatedClass -> {
-            putAll(generatedClass);
-        });
+        generatedClasses.forEach(this::putAll);
 
     }
 

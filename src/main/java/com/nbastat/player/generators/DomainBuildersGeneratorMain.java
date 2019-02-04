@@ -1,6 +1,5 @@
 package com.nbastat.player.generators;
 
-import com.nbastat.player.generators.domain.GeneratedClasses;
 import lombok.SneakyThrows;
 
 import java.nio.file.Files;

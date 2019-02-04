@@ -4,7 +4,7 @@ import com.failfast.sourcewriter.domain.*;
 import com.failfast.sourcewriter.domain.SourceCode.SourceCodeBuilder;
 import com.failfast.sourcewriter.domain.SourceCodeField.SourceCodeFieldBuilder;
 import com.failfast.sourcewriter.domain.SourceCodeMethod.SourceCodeMethodBuilder;
-import com.nbastat.player.generators.domain.GeneratedClasses;
+import com.nbastat.player.generators.GeneratedClasses;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;

@@ -1,6 +1,5 @@
 package com.nbastat.player.generators;
 
-import com.nbastat.player.generators.domain.GeneratedClasses;
 import lombok.SneakyThrows;
 import org.junit.Test;
 
@@ -11,7 +10,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DomainGeneratedClassesGeneratorTests {
+public class DomainBuilderGeneratorTests {
 
     @Test
     public void generateBuilderNoInnerClassesHappyPath() {

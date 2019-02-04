@@ -1,6 +1,5 @@
 package com.nbastat.player.generators;
 
-import com.nbastat.player.generators.domain.GeneratedClasses;
 import com.nbastat.player.generators.factories.BuilderFactory;
 import lombok.SneakyThrows;
 
