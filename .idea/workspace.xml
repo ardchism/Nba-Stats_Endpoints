@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02bbd369-58df-4a5a-8d3a-86ef8ea01bf8" name="Default Changelist" comment="Finishing NBAStatEndpointsDefinitionFactoryTest with builders">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/Headers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/nbastat/player/domain/HeadersIntegrationTests.java" afterDir="false" />
+    <list default="true" id="02bbd369-58df-4a5a-8d3a-86ef8ea01bf8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/DomainBuildersGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/DomainBuildersGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/DomainBuildersGeneratorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/DomainBuildersGeneratorMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/domain/GeneratedClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/GeneratedClasses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/factories/BuilderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/factories/BuilderFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/DomainGeneratedClassesGeneratorTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/DomainBuilderGeneratorTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,121 +12,100 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/testNbaStat.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/Headers.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/domain/HeadersIntegrationTests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/factories/NBAStatEndpointsDefinitionFactoryTests.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="99" selection-start-line="99" selection-end-line="99" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#5640#5667#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/GeneratedClasses.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.8.RELEASE/spring-web-5.0.8.RELEASE-sources.jar!/org/springframework/http/MediaType.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/endpoints/testHelloWorld.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="179">
-                  <caret line="21" column="80" lean-forward="true" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/endpoints/testHelloWorld.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="152">
-                  <caret line="21" column="88" lean-forward="true" selection-start-line="21" selection-start-column="88" selection-end-line="21" selection-end-column="88" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/testNbaStat.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/Headers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/domain/HeadersIntegrationTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/factories/NBAStatEndpointsDefinitionFactoryTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1320">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/GeneratedClasses.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.8.RELEASE/spring-web-5.0.8.RELEASE-sources.jar!/org/springframework/http/MediaType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/endpoints/testHelloWorld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -172,11 +143,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/factories/BuilderFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/DomainBuildersGeneratorTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/nbastat/player/factory/NBAStatEndpointsDefinitionFactoryTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/Headers.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/test/java/com/nbastat/player/domain/HeadersTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/nbastat/player/domain/HeadersIntegrationTests.java" />
         <option value="$PROJECT_DIR$/src/test/generated/java/com/nbastat/player/generators/domain/builders/GeneratedClassesBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/GeneratedClasses.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/Headers.java" />
       </list>
     </option>
   </component>
@@ -359,8 +331,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,7 +345,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549257541249" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549257579493" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -381,7 +353,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -531,10 +503,10 @@
       <item itemvalue="JUnit.All Junits" />
       <item itemvalue="JUnit.DomainBuildersGeneratorTests.generateBuilderNoInnerClassesHappyPath" />
       <item itemvalue="JUnit.DomainBuildersGeneratorTests" />
+      <item itemvalue="JUnit.HeadersIntegrationTests.getHeadersHappyPath" />
       <item itemvalue="Maven.player [generate-sources]" />
       <item itemvalue="Maven.player [test]" />
       <item itemvalue="Spring Boot.PlayerApplication" />
-      <item itemvalue="JUnit.HeadersIntegrationTests.getHeadersHappyPath" />
     </list>
     <recent_temporary>
       <list>
@@ -557,7 +529,8 @@
       <workItem from="1548609523535" duration="9538000" />
       <workItem from="1548815170385" duration="5774000" />
       <workItem from="1549168873912" duration="3507000" />
-      <workItem from="1549238395088" duration="5104000" />
+      <workItem from="1549238395088" duration="5235000" />
+      <workItem from="1549643542673" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="Reformatting to fix potential bugs.">
       <created>1548622381928</created>
@@ -580,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549172204696</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding Header to yaml and test">
+      <created>1549257576695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1549257576696</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -616,12 +596,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23923000" />
+    <option name="totallyTimeSpent" value="24209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25480768" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25801283" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -705,7 +686,8 @@
     <MESSAGE value="Reformatting to fix potential bugs." />
     <MESSAGE value="Adding test to cover the domain builder generator." />
     <MESSAGE value="Finishing NBAStatEndpointsDefinitionFactoryTest with builders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing NBAStatEndpointsDefinitionFactoryTest with builders" />
+    <MESSAGE value="Adding Header to yaml and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Header to yaml and test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -740,13 +722,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/domain/builders/NBAStatParameterBuilder.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/factory/NBAStatEndpointsDefinitionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/factory/NBAStatEndpointsDefinitionFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/test/generated/java/com/nbastat/player/generators/domain/builders/NBAStatParameterBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -812,26 +788,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/DomainBuildersGeneratorTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="67" column="82" selection-start-line="67" selection-start-column="82" selection-end-line="67" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/factory/NBAStatEndpointsDefinitionFactoryTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="88" column="45" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/DomainBuildersGeneratorTests.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/factory/NBAStatEndpointsDefinitionFactoryTests.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/DomainBuildersGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -856,13 +814,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/nbaStat.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/testNbaStat.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/PlayerApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -877,30 +828,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/endpoints/testHelloWorld.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/utils/FileReaderTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="21" column="80" lean-forward="true" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.8.RELEASE/spring-web-5.0.8.RELEASE-sources.jar!/org/springframework/http/MediaType.java">
+    <entry file="file://$PROJECT_DIR$/src/test/generated/java/com/nbastat/player/generators/domain/builders/GeneratedClassesBuilder.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/testNbaStat.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+        <state>
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/Headers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        <state relative-caret-position="225">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -909,22 +855,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state>
           <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/utils/FileReaderTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/domain/HeadersIntegrationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="60">
           <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/factories/NBAStatEndpointsDefinitionFactoryTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.8.RELEASE/spring-web-5.0.8.RELEASE-sources.jar!/org/springframework/http/MediaType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="94" column="57" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/endpoints/testHelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="21" column="80" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -933,28 +902,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/GeneratedClasses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="375">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/generated/java/com/nbastat/player/generators/domain/builders/GeneratedClassesBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/nbastat/player/generators/factories/NBAStatEndpointsDefinitionFactoryTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5640#5667#0" expanded="true" />
           </folding>
         </state>
       </provider>
