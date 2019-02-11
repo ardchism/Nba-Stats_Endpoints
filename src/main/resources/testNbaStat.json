@@ -1,11 +1,4 @@
 {
-  "headers": {
-    "host": "stats.nba.com",
-    "referer": "http://stats.nba.com/players/t…17&SeasonType=Regular%20Season",
-    "userAgent": "Mozilla/5.0 (X11; Fedora; Linu…) Gecko/20100101 Firefox/59.0",
-    "xnbastatsOrigin": "stats",
-    "xnbastatsToken": "true"
-  },
   "endpoints": [
     {
       "name": "league Leaders",

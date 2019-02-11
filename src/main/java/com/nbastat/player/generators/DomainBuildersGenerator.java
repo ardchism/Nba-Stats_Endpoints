@@ -18,14 +18,23 @@ public class DomainBuildersGenerator {
                                    .replace("src/test/java/", "")
                                    .replace("/", ".")
                                    .replace(".java", ""))
-                .forEach(fullClassPackage -> generatedClasses.putAll(createBuilder(fullClassPackage)));
+                  .filter(fullClassPackage -> isEnumOrInterface(fullClassPackage))
+                  .forEach(fullClassPackage -> generatedClasses.putAll(createBuilder(fullClassPackage)));
 
         return generatedClasses;
 
     }
 
     @SneakyThrows
+    private static boolean isEnumOrInterface(String fullClassPackage) {
+        return !Class.forName(fullClassPackage)
+                     .isEnum() && !Class.forName(fullClassPackage)
+                                        .isInterface();
+    }
+
+    @SneakyThrows
     public static GeneratedClasses createBuilder(String fullClassPackage) {
+
         BuilderFactory builderFactory = new BuilderFactory();
         return builderFactory.build(fullClassPackage);
     }

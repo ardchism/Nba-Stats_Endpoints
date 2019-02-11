@@ -8,20 +8,8 @@ import java.util.List;
 @Data
 public class NBAStatEndpointsDefinition {
 
-    private NBAStatHeaders headers;
     private List<NBAStatEndpoint> endpoints = new ArrayList<>();
     private List<NBAStatParameter> parameters = new ArrayList<>();
-
-    @Data
-    public static class NBAStatHeaders {
-
-        private String host;
-        private String referer;
-        private String userAgent;
-        private String xnbastatsOrigin;
-        private String xnbastatsToken;
-
-    }
 
     @Data
     public static class NBAStatEndpoint {
