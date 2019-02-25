@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02bbd369-58df-4a5a-8d3a-86ef8ea01bf8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.jar.md5" beforeDir="false" afterPath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.jar.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.jar.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.jar.sha1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.pom" beforeDir="false" afterPath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/0.1/sourcewriter-0.1.pom" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/maven-metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/maven-metadata.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/maven-metadata.xml.md5" beforeDir="false" afterPath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/maven-metadata.xml.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/maven-metadata.xml.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/repo/com/failfast/sourcewriter/maven-metadata.xml.sha1" afterDir="false" />
-    </list>
+    <list default="true" id="02bbd369-58df-4a5a-8d3a-86ef8ea01bf8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/MeasureType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -464,7 +455,7 @@
       <workItem from="1550897004427" duration="8000" />
       <workItem from="1550959259872" duration="20000" />
       <workItem from="1550961099601" duration="630000" />
-      <workItem from="1550980662206" duration="1275000" />
+      <workItem from="1550980662206" duration="1358000" />
     </task>
     <task id="LOCAL-00001" summary="Reformatting to fix potential bugs.">
       <created>1548622381928</created>
@@ -508,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549692387785</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add new source writer build.">
+      <created>1550982438251</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1550982438251</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -544,7 +542,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30711000" />
+    <option name="totallyTimeSpent" value="30794000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -634,7 +632,8 @@
     <MESSAGE value="Adding test to cover the domain builder generator." />
     <MESSAGE value="Finishing NBAStatEndpointsDefinitionFactoryTest with builders" />
     <MESSAGE value="Adding Header to yaml and test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Header to yaml and test" />
+    <MESSAGE value="Add new source writer build." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new source writer build." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -862,7 +861,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/MeasureType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
