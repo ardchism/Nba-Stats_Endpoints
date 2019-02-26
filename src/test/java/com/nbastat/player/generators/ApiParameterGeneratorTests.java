@@ -24,26 +24,16 @@ public class ApiParameterGeneratorTests {
                                    .withValues("Usage")
                                    .get();
 
-        String expectedSourceCode = "package com.nbastat.player.domain;\n" +
-            "\n" +
-            "import lombok.AllArgsConstructor;\n" +
-            "import lombok.Getter;\n" +
-            "\n" +
-            "@AllArgsConstructor\n" +
-            "@Getter\n" +
+        String expectedSourceCode =
+            "package com.nbastat.player.domain;\n" + "\n" + "import lombok.AllArgsConstructor;\n" +
+            "import lombok.Getter;\n" + "import com.nbastat.player.domain.ApiParameter;\n" +
+            "import java.lang.String;\n" + "\n" + "@AllArgsConstructor\n" + "@Getter\n" +
             "public enum MeasureType implements ApiParameter {\n" +
-            "\n" +
-            "    Advanced(\"Advanced\"), Base(\"Base\"), Defense(\"Defense\"),\n" +
-            "    FourFactors(\"Four Factors\"), Misc(\"Misc\"), Opponent(\"Opponent\"),\n" +
-            "    Scoring(\"Scoring\"), Usage(\"Usage\");\n" +
-            "\n" +
-            "    private String value;\n" +
-            "\n" +
-            "    @Override\n" +
-            "    public ApiParameter getDefaultValue() {\n" +
-            "        return Base;\n" +
-            "    }\n" +
-            "}";
+            "\tAdvanced(\"Advanced\"), Defense(\"Defense\"), FourFactors" +
+            "(\"Four Factors\"), Misc(\n" + "\t\t\t\"Misc\"), Opponent(\"Opponent\"), Scoring" +
+            "(\"Scoring\"), Usage(\"Usage\");\n" + "\n" + "\tprivate String value;\n" + "\n" +
+            "\t@Override\n" + "\tpublic ApiParameter getDefaultValue() {\n" + "\t\treturn Base;\n" +
+            "\t}\n" + "}";
 
         // call gen
         GeneratedClasses generatedClasses = ApiGenerator.generateApiParameter(nbaStatParameter);
@@ -57,7 +47,7 @@ public class ApiParameterGeneratorTests {
 
         assertThat(code).isNotNull();
 
-        assertThat(code).isEqualToNormalizingWhitespace(expectedSourceCode);
+        assertThat(code).isEqualTo(expectedSourceCode);
 
     }
 

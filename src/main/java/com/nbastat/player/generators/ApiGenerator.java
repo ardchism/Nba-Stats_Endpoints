@@ -1,10 +1,10 @@
 package com.nbastat.player.generators;
 
-import com.failfast.sourcewriter.domain.FieldAccessLevel;
-import com.failfast.sourcewriter.domain.SourceCodeEnum;
+import com.failfast.sourcewriter.domain.*;
 import com.failfast.sourcewriter.domain.SourceCodeEnum.SourceCodeEnumBuilder;
-import com.failfast.sourcewriter.domain.SourceCodeField;
 import com.failfast.sourcewriter.domain.SourceCodeField.SourceCodeFieldBuilder;
+import com.failfast.sourcewriter.domain.SourceCodeMethod.SourceCodeMethodBuilder;
+import com.nbastat.player.domain.ApiParameter;
 import com.nbastat.player.generators.domain.NBAStatEndpointsDefinition.NBAStatParameter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,19 +29,25 @@ public class ApiGenerator {
                                   .withIsFinal(Boolean.FALSE)
                                   .build();
 
-        // TODO: Add implements to enum
+        SourceCodeMethod sourceCodeMethod = SourceCodeMethodBuilder.Builder(
+            MethodAccessLevel.PUBLIC, Boolean.FALSE, "getDefaultValue",
+            "return " + nbaStatParameter.getDefaultValue() + ";")
+                                                                   .withMethodReturnType(
+                                                                       ApiParameter.class)
+                                                                   .withAnnotation(Override.class)
+                                                                   .build();
 
         SourceCodeEnumBuilder sourceCodeEnumBuilder =
             SourceCodeEnumBuilder.Builder(nbaStatParameter.getName(), API_PARAMETER_PACKAGE)
+                                 .withInterface(ApiParameter.class)
                                  .withAnnotations(annotaions)
-                                 .withField(sourceCodeField);
+                                 .withField(sourceCodeField)
+                                 .withMethod(sourceCodeMethod);
 
         nbaStatParameter.getValues()
                         .forEach(value -> sourceCodeEnumBuilder.withValueConstructor(value,
                                                                                      "\"" + formatValue(
                                                                                          value) + "\""));
-
-        //TODO: Add override method
 
         SourceCodeEnum sourceCodeEnum = sourceCodeEnumBuilder.build();
 
