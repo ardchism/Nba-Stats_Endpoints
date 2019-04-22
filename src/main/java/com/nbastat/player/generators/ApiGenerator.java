@@ -29,39 +29,78 @@ public class ApiGenerator {
                                   .withIsFinal(Boolean.FALSE)
                                   .build();
 
-        SourceCodeMethod sourceCodeMethod = SourceCodeMethodBuilder.Builder(
-            MethodAccessLevel.PUBLIC, Boolean.FALSE, "getDefaultValue",
-            "return " + nbaStatParameter.getDefaultValue() + ";")
-                                                                   .withMethodReturnType(
-                                                                       ApiParameter.class)
-                                                                   .withAnnotation(Override.class)
-                                                                   .build();
+        SourceCodeEnumBuilder sourceCodeEnumBuilder = SourceCodeEnumBuilder.Builder(
+            nbaStatParameter.getName(), API_PARAMETER_PACKAGE)
+                                                                           .withInterface(
+                                                                               ApiParameter.class)
+                                                                           .withAnnotations(
+                                                                               annotaions)
+                                                                           .withField(
+                                                                               sourceCodeField);
 
-        SourceCodeEnumBuilder sourceCodeEnumBuilder =
-            SourceCodeEnumBuilder.Builder(nbaStatParameter.getName(), API_PARAMETER_PACKAGE)
-                                 .withInterface(ApiParameter.class)
-                                 .withAnnotations(annotaions)
-                                 .withField(sourceCodeField)
-                                 .withMethod(sourceCodeMethod);
+        if(StringUtils.isEmpty(nbaStatParameter.getDefaultValue())) {
+
+            SourceCodeMethod sourceCodeMethod = SourceCodeMethodBuilder.Builder(
+                MethodAccessLevel.PUBLIC, Boolean.FALSE, "getDefaultValue", "return null;")
+                                                                       .withMethodReturnType(
+                                                                           ApiParameter.class)
+                                                                       .withAnnotation(
+                                                                           Override.class)
+                                                                       .build();
+
+            sourceCodeEnumBuilder.withMethod(sourceCodeMethod);
+
+        } else {
+
+            SourceCodeMethod sourceCodeMethod = SourceCodeMethodBuilder.Builder(
+                MethodAccessLevel.PUBLIC, Boolean.FALSE, "getDefaultValue",
+                "return " + nbaStatParameter.getDefaultValue() + ";")
+                                                                       .withMethodReturnType(
+                                                                           ApiParameter.class)
+                                                                       .withAnnotation(
+                                                                           Override.class)
+                                                                       .build();
+
+            sourceCodeEnumBuilder.withMethod(sourceCodeMethod);
+        }
+
 
         nbaStatParameter.getValues()
-                        .forEach(value -> sourceCodeEnumBuilder.withValueConstructor(value,
-                                                                                     "\"" + formatValue(
-                                                                                         value) + "\""));
+                        .forEach(value -> sourceCodeEnumBuilder.withValueConstructor(
+                            formatEnumName(value), formatValue(value)));
 
         SourceCodeEnum sourceCodeEnum = sourceCodeEnumBuilder.build();
 
-        GeneratedClasses generatedClasses = new GeneratedClasses();
+        GeneratedClasses generatedClasses = new MainGeneratedClasses();
 
-        generatedClasses.put(sourceCodeEnum.getFullyQualifiedClassName(),
+        generatedClasses.put(sourceCodeEnum.getFullyQualifiedClassName()
+                                           .replace(".", "/"),
                              sourceCodeEnum.getFormattedSourceCode());
 
         return generatedClasses;
 
     }
 
+    private static String formatEnumName(String enumName) {
+
+        String name = enumName;
+
+        if(StringUtils.startsWithAny(name, "0", "1", "2", "3", "4", "5", "6", "7", "8", "9")) {
+            name = "_" + name;
+        }
+
+        return name.replace(" ", "")
+                   .replace("-", "_")
+                   .replace("(", "_")
+                   .replace(")", "")
+                   .replace("&", "_")
+                   .replace(".", "_")
+                   .replace("'", "");
+    }
+
     private static String formatValue(String value) {
-        return StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(value), ' ');
+
+        return "\"" + value + "\"";
     }
 
 }

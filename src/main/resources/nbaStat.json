@@ -86,7 +86,6 @@
     },
     {
       "name": "SeasonType",
-      "defaultValue": "",
       "values": [
         "Regular Season",
         "Pre Season",
@@ -96,7 +95,6 @@
     },
     {
       "name": "College",
-      "defaultValue": "",
       "values": [
         "All Affiliations",
         "High School",
@@ -669,7 +667,6 @@
     },
     {
       "name": "Conference",
-      "defaultValue": "",
       "values": [
         "East",
         "West"
@@ -677,7 +674,6 @@
     },
     {
       "name": "Country",
-      "defaultValue": "",
       "values": [
         "All Countries",
         "International",
@@ -685,7 +681,7 @@
         "Argentina",
         "Australia",
         "Belize",
-        "Boznia &amp; Herzegovina",
+        "Boznia&Herzegovina",
         "Brazil",
         "Cameroon",
         "Canada",
@@ -728,7 +724,7 @@
         "Slovenia",
         "South Korea",
         "Spain",
-        "St. Vincent &amp; Grenadines",
+        "St. Vincent&Grenadines",
         "Sudan",
         "Sudan (UK)",
         "Sweden",
@@ -746,21 +742,18 @@
     },
     {
       "name": "DateFrom",
-      "defaultValue": "",
       "values": [
         "JavaDate"
       ]
     },
     {
       "name": "DateTo",
-      "defaultValue": "",
       "values": [
         "JavaDate"
       ]
     },
     {
       "name": "Division",
-      "defaultValue": "",
       "values": [
         "Atlantic",
         "Central",
@@ -772,7 +765,6 @@
     },
     {
       "name": "DraftPick",
-      "defaultValue": "",
       "values": [
         "All Draft Rounds",
         "1st Round",
@@ -791,7 +783,6 @@
     },
     {
       "name": "DraftYear",
-      "defaultValue": "",
       "values": [
         "All Draft Years",
         "2017",
@@ -869,7 +860,6 @@
     },
     {
       "name": "GameScope",
-      "defaultValue": "",
       "values": [
         "Yesterday",
         "Last 10"
@@ -877,7 +867,6 @@
     },
     {
       "name": "GameSegment",
-      "defaultValue": "",
       "values": [
         "First Half",
         "Overtime",
@@ -886,7 +875,6 @@
     },
     {
       "name": "Height",
-      "defaultValue": "",
       "values": [
         "LT 6-0",
         "GT 6-0",
@@ -916,7 +904,6 @@
     },
     {
       "name": "Location",
-      "defaultValue": "",
       "values": [
         "Home",
         "Road"
@@ -936,7 +923,6 @@
     },
     {
       "name": "Outcome",
-      "defaultValue": "",
       "values": [
         "W",
         "L"
@@ -983,7 +969,6 @@
     },
     {
       "name": "PlayerExperience",
-      "defaultValue": "",
       "values": [
         "Rookie",
         "Sophomore",
@@ -992,7 +977,6 @@
     },
     {
       "name": "PlayerPosition",
-      "defaultValue": "",
       "values": [
         "F",
         "C",
@@ -1021,7 +1005,6 @@
     },
     {
       "name": "SeasonSegment",
-      "defaultValue": "",
       "values": [
         "Post All-Star",
         "Pre All-Star"
@@ -1029,7 +1012,6 @@
     },
     {
       "name": "ShotClockRange",
-      "defaultValue": "",
       "values": [
         "24-22",
         "22-18 Very Early",
@@ -1042,7 +1024,6 @@
     },
     {
       "name": "StarterBench",
-      "defaultValue": "",
       "values": [
         "Starters",
         "Bench"
@@ -1096,7 +1077,6 @@
     },
     {
       "name": "Weight",
-      "defaultValue": "",
       "values": [
         "lt 200",
         "gt 200",

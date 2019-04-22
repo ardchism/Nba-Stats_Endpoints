@@ -11,7 +11,7 @@ public class DomainBuildersGenerator {
 
     public static GeneratedClasses generateBuilders(Stream<Path> pathStream) {
 
-        GeneratedClasses generatedClasses = new GeneratedClasses();
+        GeneratedClasses generatedClasses = new TestGeneratedClasses();
 
         pathStream.map(file -> file.toString()
                                    .replace("src/main/java/", "")

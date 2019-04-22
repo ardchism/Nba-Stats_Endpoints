@@ -11,9 +11,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Getter
-public class GeneratedClasses {
+public abstract class GeneratedClasses {
 
     private final Map<String, String> className2SourceCodeMap = new HashMap<>();
+
+    @SneakyThrows
+    private void writeClass(String className, String code) {
+
+        String filePath = getFilePath() + className + ".java";
+        String directoryPath = filePath.substring(0, filePath.lastIndexOf("/"));
+
+        File directory = new File(directoryPath);
+        if(!directory.exists()) {
+            directory.mkdirs();
+        } else {
+            directory.delete();
+            directory.mkdirs();
+        }
+
+        Files.write(Paths.get(filePath), code.getBytes());
+        System.out.println("GeneratedClasses written to " + filePath);
+
+    }
 
     public String get(String className) {
         return getClassName2SourceCodeMap().get(className);
@@ -37,28 +56,10 @@ public class GeneratedClasses {
         getClassName2SourceCodeMap().putAll(generatedClasses.getClassName2SourceCodeMap());
     }
 
-
     public void writeClasses() {
         getClassName2SourceCodeMap().forEach(this::writeClass);
     }
 
-    @SneakyThrows
-    private void writeClass(String className, String code) {
-
-        String filePath = "src/test/generated/java/" + className + ".java";
-        String directoryPath = filePath.substring(0, filePath.lastIndexOf("/"));
-
-        File directory = new File(directoryPath);
-        if (!directory.exists()) {
-            directory.mkdirs();
-        } else {
-            directory.delete();
-            directory.mkdirs();
-        }
-
-        Files.write(Paths.get(filePath), code.getBytes());
-        System.out.println("GeneratedClasses written to " + filePath);
-
-    }
+    abstract String getFilePath();
 
 }

@@ -16,12 +16,12 @@ public class ApiParameterGeneratorTests {
                                    .withName("MeasureType")
                                    .withDefaultValue("Base")
                                    .withValues("Advanced")
-                                   .withValues("Defense")
-                                   .withValues("FourFactors")
-                                   .withValues("Misc")
-                                   .withValues("Opponent")
-                                   .withValues("Scoring")
-                                   .withValues("Usage")
+                                   .withValues("D'efense")
+                                   .withValues("Four Factors")
+                                   .withValues("M.sc")
+                                   .withValues("O&ponent")
+                                   .withValues("123-456")
+                                   .withValues("Usa(ge)")
                                    .get();
 
         String expectedSourceCode =
@@ -29,9 +29,10 @@ public class ApiParameterGeneratorTests {
             "import lombok.Getter;\n" + "import com.nbastat.player.domain.ApiParameter;\n" +
             "import java.lang.String;\n" + "\n" + "@AllArgsConstructor\n" + "@Getter\n" +
             "public enum MeasureType implements ApiParameter {\n" +
-            "\tAdvanced(\"Advanced\"), Defense(\"Defense\"), FourFactors" +
-            "(\"Four Factors\"), Misc(\n" + "\t\t\t\"Misc\"), Opponent(\"Opponent\"), Scoring" +
-            "(\"Scoring\"), Usage(\"Usage\");\n" + "\n" + "\tprivate String value;\n" + "\n" +
+            "\tAdvanced(\"Advanced\"), Defense(\"D'efense\"), FourFactors" +
+            "(\"Four Factors\"), M_sc(\n" + "\t\t\t\"M.sc\"), O_ponent(\"O&ponent\"), _123_456" +
+            "(\"123-456\"), Usa_ge(\n\t\t\t\"Usa(ge)\");\n" + "\n" + "\tprivate String value;\n" +
+            "\n" +
             "\t@Override\n" + "\tpublic ApiParameter getDefaultValue() {\n" + "\t\treturn Base;\n" +
             "\t}\n" + "}";
 
@@ -42,13 +43,61 @@ public class ApiParameterGeneratorTests {
         assertThat(generatedClasses.size()).isEqualTo(1);
 
         String code = generatedClasses.getClassName2SourceCodeMap()
-                                      .get(
-                                          "com.nbastat.player.domain.MeasureType");
+                                      .get("com/nbastat/player/domain/MeasureType");
 
         assertThat(code).isNotNull();
 
         assertThat(code).isEqualTo(expectedSourceCode);
 
     }
+
+    @Test
+    public void generateApiParameterHappyPathNullDefaultValue() {
+
+        NBAStatParameter nbaStatParameter = NBAStatParameterBuilder.Builder()
+                                                                   .withName("MeasureType")
+                                                                   .withValues("Advanced")
+                                                                   .withValues("D'efense")
+                                                                   .withValues("Four Factors")
+                                                                   .withValues("M.sc")
+                                                                   .withValues("O&ponent")
+                                                                   .withValues("123-456")
+                                                                   .withValues("Usa(ge)")
+                                                                   .get();
+
+        String expectedSourceCode =
+            "package com.nbastat.player.domain;\n" + "\n" + "import lombok.AllArgsConstructor;\n" +
+            "import lombok.Getter;\n" + "import com.nbastat.player.domain.ApiParameter;\n" +
+            "import java.lang.String;\n" + "\n" + "@AllArgsConstructor\n" + "@Getter\n" +
+            "public enum MeasureType implements ApiParameter {\n" +
+            "\tAdvanced(\"Advanced\"), Defense(\"D'efense\"), FourFactors" +
+            "(\"Four Factors\"), M_sc(\n" + "\t\t\t\"M.sc\"), O_ponent(\"O&ponent\"), _123_456" +
+            "(\"123-456\"), Usa_ge(\n\t\t\t\"Usa(ge)\");\n" + "\n" + "\tprivate String value;\n" +
+            "\n" + "\t@Override\n" + "\tpublic ApiParameter getDefaultValue() {\n" +
+            "\t\treturn null;\n" + "\t}\n" + "}";
+
+        // call gen
+        GeneratedClasses generatedClasses = ApiGenerator.generateApiParameter(nbaStatParameter);
+
+        // assert
+        assertThat(generatedClasses.size()).isEqualTo(1);
+
+        String code = generatedClasses.getClassName2SourceCodeMap()
+                                      .get("com/nbastat/player/domain/MeasureType");
+
+        assertThat(code).isNotNull();
+
+        assertThat(code).isEqualTo(expectedSourceCode);
+
+    }
+
+    //TODO: Add java integer test
+
+    //TODO: Return integer when not java integer
+
+    //TODO: SuperObject Tests
+
+    //TODO: JavaMonth Tests
+
 
 }

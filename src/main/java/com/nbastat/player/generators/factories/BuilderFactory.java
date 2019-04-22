@@ -5,6 +5,7 @@ import com.failfast.sourcewriter.domain.SourceCode.SourceCodeBuilder;
 import com.failfast.sourcewriter.domain.SourceCodeField.SourceCodeFieldBuilder;
 import com.failfast.sourcewriter.domain.SourceCodeMethod.SourceCodeMethodBuilder;
 import com.nbastat.player.generators.GeneratedClasses;
+import com.nbastat.player.generators.TestGeneratedClasses;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -23,7 +24,7 @@ public class BuilderFactory {
 
     private GeneratedClasses buildFromClass(Class<?> currentClass, String fullClassName) {
 
-        GeneratedClasses generatedClasses = new GeneratedClasses();
+        GeneratedClasses generatedClasses = new TestGeneratedClasses();
 
         List<SourceCodeField> sourceCodeFields = new ArrayList<>();
         List<SourceCodeMethod> sourceCodeMethods = new ArrayList<>();
