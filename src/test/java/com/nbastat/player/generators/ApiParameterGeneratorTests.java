@@ -92,6 +92,20 @@ public class ApiParameterGeneratorTests {
     }
 
     //TODO: Add java integer test
+    @Test
+    public void generateApiParameterHappyPathJavaInteger() {
+
+        NBAStatParameter nbaStatParameter = NBAStatParameterBuilder.Builder()
+                                                                   .withName("LastNGames")
+                                                                   .get();
+
+        // call gen
+        GeneratedClasses generatedClasses = ApiGenerator.generateApiParameter(nbaStatParameter);
+
+        // assert
+        assertThat(generatedClasses.size()).isEqualTo(0);
+
+    }
 
     //TODO: Return integer when not java integer
 

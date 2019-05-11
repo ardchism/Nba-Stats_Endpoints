@@ -24,10 +24,11 @@ public class NBAStatEndpointsDefinition {
     @Data
     public static class NBAStatParameter {
 
-        private String name;
-        private String defaultValue;
+        private String       name;
+        private String       defaultValue;
         private List<String> values = new ArrayList<>();
-        private String superObject;
+        private String       superObject;
+        private Boolean      isJavaInteger;
 
     }
 

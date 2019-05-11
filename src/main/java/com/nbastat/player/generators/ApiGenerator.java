@@ -19,6 +19,10 @@ public class ApiGenerator {
 
     public static GeneratedClasses generateApiParameter(NBAStatParameter nbaStatParameter) {
 
+        if(nbaStatParameter.getIsJavaInteger()) {
+            return new MainGeneratedClasses();
+        }
+
         List<Class<?>> annotaions = new ArrayList<>();
         annotaions.add(AllArgsConstructor.class);
         annotaions.add(Getter.class);

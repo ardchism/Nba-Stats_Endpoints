@@ -890,10 +890,7 @@
     },
     {
       "name": "LastNGames",
-      "defaultValue": "0",
-      "values": [
-        "JavaInteger"
-      ]
+      "isJavaInteger": true
     },
     {
       "name": "LeagueID",
