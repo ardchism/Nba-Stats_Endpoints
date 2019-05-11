@@ -1,6 +1,7 @@
 package com.nbastat.player.generators.domain;
 
 import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,28 @@ public class NBAStatEndpointsDefinition {
         private List<String> values = new ArrayList<>();
         private String       superObject;
         private Boolean      isJavaInteger;
+        private Boolean isJavaDate;
+        private Boolean isJavaMonth;
+
+        public boolean shouldSkipGeneratingParameter() {
+            return hasSuperObject() || hasJavaInteger() || hasJavaDate() || hasJavaMonth();
+        }
+
+        boolean hasSuperObject() {
+            return StringUtils.isNotEmpty(getSuperObject());
+        }
+
+        boolean hasJavaInteger() {
+            return getIsJavaInteger() != null && getIsJavaInteger();
+        }
+
+        boolean hasJavaDate() {
+            return getIsJavaDate() != null && getIsJavaDate();
+        }
+
+        boolean hasJavaMonth() {
+            return getIsJavaMonth() != null && getIsJavaMonth();
+        }
 
     }
 

@@ -141,16 +141,19 @@
                             </arguments>
                         </configuration>
                     </execution>
-                    <!--                    <execution>-->
-                    <!--                        <id>apiGenerator</id>-->
-                    <!--                        <phase>generate-sources</phase>-->
-                    <!--                        <goals>-->
-                    <!--                            <goal>java</goal>-->
-                    <!--                        </goals>-->
-                    <!--                        <configuration>-->
-                    <!--                            <mainClass>com.nbastat.player.generators.ApiGeneratorMain</mainClass>-->
-                    <!--                        </configuration>-->
-                    <!--                    </execution>-->
+                    <execution>
+                        <id>apiGenerator</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.nbastat.player.generators.ApiGeneratorMain</mainClass>
+                            <arguments>
+                                <argument>nbaStat.json</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

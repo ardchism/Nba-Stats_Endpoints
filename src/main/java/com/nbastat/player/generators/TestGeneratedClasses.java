@@ -5,6 +5,6 @@ import lombok.Getter;
 @Getter
 public class TestGeneratedClasses extends GeneratedClasses {
 
-    private final String filePath = "src/test/generated/";
+    private final String filePath = "src/test/generated/java/";
 
 }

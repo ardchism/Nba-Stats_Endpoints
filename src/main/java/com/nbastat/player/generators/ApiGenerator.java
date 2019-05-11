@@ -13,13 +13,13 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApiGenerator {
+class ApiGenerator {
 
     private static final String API_PARAMETER_PACKAGE = "com.nbastat.player.domain";
 
-    public static GeneratedClasses generateApiParameter(NBAStatParameter nbaStatParameter) {
+    static GeneratedClasses generateApiParameter(NBAStatParameter nbaStatParameter) {
 
-        if(nbaStatParameter.getIsJavaInteger()) {
+        if(nbaStatParameter.shouldSkipGeneratingParameter()) {
             return new MainGeneratedClasses();
         }
 
@@ -58,7 +58,7 @@ public class ApiGenerator {
 
             SourceCodeMethod sourceCodeMethod = SourceCodeMethodBuilder.Builder(
                 MethodAccessLevel.PUBLIC, Boolean.FALSE, "getDefaultValue",
-                "return " + nbaStatParameter.getDefaultValue() + ";")
+                "return " + formatEnumName(nbaStatParameter.getDefaultValue()) + ";")
                                                                        .withMethodReturnType(
                                                                            ApiParameter.class)
                                                                        .withAnnotation(
@@ -66,8 +66,17 @@ public class ApiGenerator {
                                                                        .build();
 
             sourceCodeEnumBuilder.withMethod(sourceCodeMethod);
-        }
 
+            if(nbaStatParameter.getValues()
+                               .stream()
+                               .noneMatch(value -> value.equalsIgnoreCase(
+                                   nbaStatParameter.getDefaultValue()))) {
+                sourceCodeEnumBuilder.withValueConstructor(
+                    formatEnumName(nbaStatParameter.getDefaultValue()),
+                    formatValue(nbaStatParameter.getDefaultValue()));
+            }
+
+        }
 
         nbaStatParameter.getValues()
                         .forEach(value -> sourceCodeEnumBuilder.withValueConstructor(
@@ -87,6 +96,13 @@ public class ApiGenerator {
 
     private static String formatEnumName(String enumName) {
 
+        if(enumName.split("\\|").length > 2) {
+            throw new RuntimeException(enumName + " contains more than one |. Not allowed because" +
+                                           " | is used for key pair values");
+        }
+
+        enumName = enumName.split("\\|")[0];
+
         String name = enumName;
 
         if(StringUtils.startsWithAny(name, "0", "1", "2", "3", "4", "5", "6", "7", "8", "9")) {
@@ -94,8 +110,8 @@ public class ApiGenerator {
         }
 
         return name.replace(" ", "")
-                   .replace("-", "_")
                    .replace("(", "_")
+                   .replace("-", "_")
                    .replace(")", "")
                    .replace("&", "_")
                    .replace(".", "_")
@@ -103,6 +119,14 @@ public class ApiGenerator {
     }
 
     private static String formatValue(String value) {
+
+        if(value.split("\\|").length > 2) {
+            throw new RuntimeException(value + " contains more than one |. Not allowed because" +
+                                           " | is used for key pair values");
+        }
+
+        if(value.split("\\|").length > 1)
+            value = value.split("\\|")[1];
 
         return "\"" + value + "\"";
     }
