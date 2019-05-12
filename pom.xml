@@ -138,6 +138,7 @@
                             <arguments>
                                 <argument>src/main/java/com/nbastat/player/domain</argument>
                                 <argument>src/main/java/com/nbastat/player/generators/domain</argument>
+                                <argument>src/main/java/com/nbastat/player/responses</argument>
                             </arguments>
                         </configuration>
                     </execution>

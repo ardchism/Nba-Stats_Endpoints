@@ -1,0 +1,29 @@
+package com.nbastat.player.api.endpoints;
+
+import com.nbastat.player.api.service.PlayerStatService;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+import java.util.Objects;
+
+@AllArgsConstructor
+@RestController
+public class PlayerStatEndpoints {
+
+    private PlayerStatService playerStatService;
+
+    @RequestMapping("/V1/PlayerStats/")
+    public Map<String, String> getPlayerStatsById(
+        @RequestParam(value = "playerId")
+            Integer playerId) {
+
+        Objects.requireNonNull(playerId, "PlayerId can not be null");
+
+        return playerStatService.getPlayerStatsById(playerId);
+
+    }
+
+}
