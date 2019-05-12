@@ -3,6 +3,7 @@ package com.nbastat.player.api.endpoints;
 import com.nbastat.player.api.service.PlayerStatService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ public class PlayerStatEndpoints {
 
     private PlayerStatService playerStatService;
 
-    @RequestMapping("/V1/PlayerStats/")
+    @RequestMapping(path = "/V1/PlayerStats/", method = RequestMethod.GET)
     public Map<String, String> getPlayerStatsById(
         @RequestParam(value = "playerId")
             Integer playerId) {

@@ -1,5 +1,6 @@
 package com.nbastat.player.domain.repository;
 
+import com.nbastat.player.domain.repository.builders.LeagueDashboardUrlBuilder;
 import com.nbastat.player.responses.LeagueDashPlayerStatsResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -18,9 +19,11 @@ public class NbaStatResultSetRepository {
 
         Objects.requireNonNull(playerId, "PlayerId can not be null");
 
-        //TODO: Replace test url with uri builder
+        String url = LeagueDashboardUrlBuilder.Builder()
+                                              .build();
+
         LeagueDashPlayerStatsResponse leagueDashPlayerStatsResponse =
-            restTemplate.getForObject("TEST", LeagueDashPlayerStatsResponse.class);
+            restTemplate.getForObject(url, LeagueDashPlayerStatsResponse.class);
 
         Objects.requireNonNull(leagueDashPlayerStatsResponse,
                                "League Dashboard Did Not Return A Response!");

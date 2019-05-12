@@ -87,15 +87,15 @@ public class ApiParameterGeneratorTests {
                 "@AllArgsConstructor\n" +
                 "@Getter\n" +
                 "public enum MeasureType implements ApiParameter {\n" +
-                "\tAdvanced(\"Advanced\"), Defense(\"D'efense\"), FourFactors(\"Four Factors\"), M_sc(\n" +
-                "\t\t\t\"M.sc\"), O_ponent(\"O&ponent\"), _123456(\"123456\"), Usa_ge(\"Usa(ge)" +
-                "\");\n" +
+                "\tDefault(\"\"), Advanced(\"Advanced\"), Defense(\"D'efense\"), FourFactors(\n" +
+                "\t\t\t\"Four Factors\"), M_sc(\"M.sc\"), O_ponent(\"O&ponent\"), _123456(\n" +
+                "\t\t\t\"123456\"), Usa_ge(\"Usa(ge)\");\n" +
                 "\n" +
                 "\tprivate String value;\n" +
                 "\n" +
                 "\t@Override\n" +
                 "\tpublic ApiParameter getDefaultValue() {\n" +
-                "\t\treturn null;\n" +
+                "\t\treturn Default;\n" +
                 "\t}\n" +
                 "}";
 

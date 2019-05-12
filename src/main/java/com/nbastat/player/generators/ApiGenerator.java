@@ -44,8 +44,10 @@ class ApiGenerator {
 
         if(StringUtils.isEmpty(nbaStatParameter.getDefaultValue())) {
 
+            sourceCodeEnumBuilder.withValueConstructor("Default", formatValue(""));
+
             SourceCodeMethod sourceCodeMethod = SourceCodeMethodBuilder.Builder(
-                MethodAccessLevel.PUBLIC, Boolean.FALSE, "getDefaultValue", "return null;")
+                MethodAccessLevel.PUBLIC, Boolean.FALSE, "getDefaultValue", "return Default;")
                                                                        .withMethodReturnType(
                                                                            ApiParameter.class)
                                                                        .withAnnotation(
