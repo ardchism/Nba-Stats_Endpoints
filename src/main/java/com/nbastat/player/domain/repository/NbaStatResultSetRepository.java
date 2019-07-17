@@ -13,7 +13,7 @@ import java.util.Objects;
 @Repository
 public class NbaStatResultSetRepository {
 
-    private RestTemplate restTemplate;
+    public RestTemplate restTemplate;
 
     public Map<String, String> getPlayerStatsById(Integer playerId) {
 

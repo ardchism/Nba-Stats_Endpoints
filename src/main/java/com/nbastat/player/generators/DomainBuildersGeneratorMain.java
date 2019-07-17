@@ -12,12 +12,17 @@ public class DomainBuildersGeneratorMain {
 
     public static void main(String[] args) {
 
-        if(args.length == 0) {
-            throw new RuntimeException("Minimum of 1 path parameter required....");
-        }
+//        if(args.length == 0) {
+//            throw new RuntimeException("Minimum of 1 path parameter required....");
+//        }
+//
+//        Arrays.stream(args)
+//              .forEach(DomainBuildersGeneratorMain::generateBuilders);
 
-        Arrays.stream(args)
-              .forEach(DomainBuildersGeneratorMain::generateBuilders);
+        int i = 010;
+        int j = 07;
+        System.out.print(i);
+        System.out.print(j);
 
     }
 
