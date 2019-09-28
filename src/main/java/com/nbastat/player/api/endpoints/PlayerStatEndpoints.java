@@ -1,5 +1,6 @@
 package com.nbastat.player.api.endpoints;
 
+import com.nbastat.player.api.contracts.PlayerResponse;
 import com.nbastat.player.api.service.PlayerStatService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -27,4 +29,8 @@ public class PlayerStatEndpoints {
 
     }
 
+    @RequestMapping(path = "/V1/PlayerStats/all", method = RequestMethod.GET)
+    public List<PlayerResponse> getPlayers() {
+        return null;
+    }
 }

@@ -1,10 +1,12 @@
 package com.nbastat.player.api.endpoints;
 
+import com.nbastat.player.api.contracts.PlayerResponse;
 import com.nbastat.player.api.service.PlayerStatService;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,6 +28,17 @@ public class PlayerStatsEndpointsTests {
 
         assertThat(playerStatEndpoints.getPlayerStatsById(1)
                                       .toString()).isEqualTo("{PlayerId=1, PlayerName=Jack Frost}");
+
+    }
+
+    @Test
+    public void getPlayerStatsHappyPath() {
+
+        PlayerStatService playerStatService = Mockito.mock(PlayerStatService.class);
+
+        PlayerStatEndpoints playerStatEndpoints = new PlayerStatEndpoints(playerStatService);
+
+        List<PlayerResponse> players = playerStatEndpoints.getPlayers();
 
     }
 

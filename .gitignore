@@ -19,3 +19,4 @@ src/test/generated/
 
 *.swp
 .mvn/*
+/src/main/generated/java/com/nbastat/player/domain/
