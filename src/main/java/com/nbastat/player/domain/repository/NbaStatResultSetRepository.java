@@ -1,7 +1,7 @@
 package com.nbastat.player.domain.repository;
 
 import com.nbastat.player.domain.repository.builders.LeagueDashboardUrlBuilder;
-import com.nbastat.player.responses.LeagueDashPlayerStatsResponse;
+import com.nbastat.player.domain.repository.responses.LeagueDashPlayerStatsResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
@@ -35,3 +35,5 @@ public class NbaStatResultSetRepository {
 
     }
 }
+
+

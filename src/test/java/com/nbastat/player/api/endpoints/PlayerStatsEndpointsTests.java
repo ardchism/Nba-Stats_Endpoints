@@ -40,6 +40,9 @@ public class PlayerStatsEndpointsTests {
 
         List<PlayerResponse> players = playerStatEndpoints.getPlayers();
 
+        //TODO: Assert PlayerResponse matches mocked response
+
+
     }
 
     @Test

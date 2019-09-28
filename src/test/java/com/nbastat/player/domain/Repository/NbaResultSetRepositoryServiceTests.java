@@ -3,7 +3,7 @@ package com.nbastat.player.domain.Repository;
 import com.nbastat.player.domain.NbaStatResultSet;
 import com.nbastat.player.domain.builders.NbaStatResultSetBuilder;
 import com.nbastat.player.domain.repository.NbaStatResultSetRepository;
-import com.nbastat.player.responses.LeagueDashPlayerStatsResponse;
+import com.nbastat.player.domain.repository.responses.LeagueDashPlayerStatsResponse;
 import com.nbastat.player.responses.builders.LeagueDashPlayerStatsResponseBuilder;
 import org.junit.Test;
 import org.mockito.Mockito;
