@@ -1,6 +1,7 @@
 package com.nbastat.player.api.endpoints;
 
 import com.nbastat.player.api.contracts.PlayerResponse;
+import com.nbastat.player.api.contracts.factories.PlayerResponseFactory;
 import com.nbastat.player.api.service.PlayerStatService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import java.util.Objects;
 public class PlayerStatEndpoints {
 
     private PlayerStatService playerStatService;
+    private PlayerResponseFactory playerResponseFactory;
 
     @RequestMapping(path = "/V1/PlayerStats/", method = RequestMethod.GET)
     public Map<String, String> getPlayerStatsById(
@@ -31,6 +33,7 @@ public class PlayerStatEndpoints {
 
     @RequestMapping(path = "/V1/PlayerStats/all", method = RequestMethod.GET)
     public List<PlayerResponse> getPlayers() {
-        return null;
+
+        return playerResponseFactory.build(playerStatService.getPlayers());
     }
 }

@@ -1,9 +1,9 @@
-package com.nbastat.player.api.contracts;
+package com.nbastat.player.domain;
 
 import lombok.Data;
 
 @Data
-public class PlayerResponse {
+public class Player {
 
     private Long playerId;
     private String playerName;

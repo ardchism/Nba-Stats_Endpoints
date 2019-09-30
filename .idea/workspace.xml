@@ -4,9 +4,17 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bbd369-58df-4a5a-8d3a-86ef8ea01bf8" name="Default Changelist" comment="">
+    <list default="true" id="02bbd369-58df-4a5a-8d3a-86ef8ea01bf8" name="Default Changelist" comment="Completed get endpoint to return all players along with unit tests.">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/api/contracts/factories/PlayerResponseFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/domain/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/DomainBuildersGeneratorMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/generators/DomainBuildersGeneratorMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/api/contracts/PlayerResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/api/contracts/PlayerResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/api/endpoints/PlayerStatEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/api/endpoints/PlayerStatEndpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nbastat/player/api/service/PlayerStatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nbastat/player/api/service/PlayerStatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nbastat/player/api/endpoints/PlayerStatsEndpointsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nbastat/player/api/endpoints/PlayerStatsEndpointsTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +22,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="nba-stat-endpoints" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,6 +68,11 @@
         <option value="ardchism &lt;ardchism@gmail.com&gt;" />
       </list>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -59,6 +89,7 @@
     <OptionsSetting value="false" id="Update" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -95,10 +126,15 @@
       <recent name="com.nbastat.player" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nbastat.player.domain.repository.responses" />
       <recent name="com.nbastat.player.domain.Repository" />
       <recent name="com.nbastat.player.generators" />
       <recent name="com.nbastat.player.generators.testPOJO" />
       <recent name="com.nbastat.player.generators.factories" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nbastat.player.domain" />
+      <recent name="com.nbastat.player.api.contracts" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -217,7 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PlayerApplication">
+  <component name="RunManager" selected="JUnit.All Junits">
     <configuration name="ApiGenerators" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.nbastat.player.generators.ApiGeneratorMain" />
       <module name="player" />
@@ -226,7 +262,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DomainBuildersGeneratorMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DomainBuildersGeneratorMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nbastat.player.generators.DomainBuildersGeneratorMain" />
       <module name="player" />
       <extension name="coverage">
@@ -340,9 +376,10 @@
       <method v="2" />
     </configuration>
     <configuration name="PlayerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="player" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.nbastat.player.PlayerApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -362,16 +399,17 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DomainBuildersGeneratorMain" />
+        <item itemvalue="HTTP Request.PlayerApplication#6" />
+        <item itemvalue="HTTP Request.PlayerApplication#4" />
+        <item itemvalue="HTTP Request.PlayerApplication#2" />
         <item itemvalue="HTTP Request.PlayerApplication#1" />
         <item itemvalue="HTTP Request.PlayerApplication#6" />
-        <item itemvalue="HTTP Request.PlayerApplication#2" />
-        <item itemvalue="HTTP Request.PlayerApplication#4" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpringBeansView">
     <option name="showModules" value="false" />
+    <option name="beanDetailsProportion" value="0.3" />
   </component>
   <component name="SpringBootOptions">
     <option name="showAdditionalConfigNotification" value="false" />
@@ -410,6 +448,8 @@
       <workItem from="1557792835920" duration="251000" />
       <workItem from="1565320379413" duration="840000" />
       <workItem from="1565321578480" duration="2414000" />
+      <workItem from="1569554793993" duration="402000" />
+      <workItem from="1569555223198" duration="9214000" />
     </task>
     <task id="LOCAL-00001" summary="Reformatting to fix potential bugs.">
       <created>1548622381928</created>
@@ -509,7 +549,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557685237124</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added shell get endpoint to return all players.">
+      <created>1569640998485</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1569640998485</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Refactoring packages to make them more readable.">
+      <created>1569685527846</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1569685527846</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +595,10 @@
     <MESSAGE value="WIP PlayerStat Endpoints." />
     <MESSAGE value="Fixing duplicate bean logic." />
     <MESSAGE value="Finished PlayerStatById endpoint." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished PlayerStatById endpoint." />
+    <MESSAGE value="Added shell get endpoint to return all players." />
+    <MESSAGE value="Refactoring packages to make them more readable." />
+    <MESSAGE value="Completed get endpoint to return all players along with unit tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed get endpoint to return all players along with unit tests." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

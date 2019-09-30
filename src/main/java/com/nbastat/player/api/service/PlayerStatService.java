@@ -1,9 +1,11 @@
 package com.nbastat.player.api.service;
 
+import com.nbastat.player.domain.Player;
 import com.nbastat.player.domain.repository.NbaStatResultSetRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -19,5 +21,9 @@ public class PlayerStatService {
 
         return nbaStatResultSetRepository.getPlayerStatsById(playerId);
 
+    }
+
+    public List<Player> getPlayers() {
+        return null;
     }
 }
