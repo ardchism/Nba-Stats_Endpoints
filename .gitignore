@@ -2,3 +2,5 @@
 */.idea/
 */src/main/generated/
 */src/test/generated/
+.idea/
+*.iml
