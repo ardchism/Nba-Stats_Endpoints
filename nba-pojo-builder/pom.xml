@@ -17,8 +17,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <version.assertj>3.11.1</version.assertj>
   </properties>
 
   <dependencies>
@@ -28,6 +29,34 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.12</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+      <dependency>
+          <groupId>com.failsfast</groupId>
+          <artifactId>sourcewriter</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>${version.assertj}</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.9.6</version>
+          <scope>compile</scope>
+      </dependency>
   </dependencies>
 
   <build>

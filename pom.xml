@@ -13,6 +13,7 @@
   <modules>
     <module>nba-stat-endpoints</module>
     <module>nba-pojo-builder</module>
+    <module>source-writer</module>
   </modules>
 
   <properties>

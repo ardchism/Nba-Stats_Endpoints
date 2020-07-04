@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.nbastat</groupId>
+    <groupId>com.failsfast</groupId>
     <artifactId>nba-stat-endpoints</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -24,14 +24,6 @@
         <java.version>1.8</java.version>
         <version.roaster>2.20.1.Final</version.roaster>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>project.local</id>
-            <name>project</name>
-            <url>file:${project.basedir}/repo</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
@@ -95,9 +87,9 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
-            <groupId>com.failfast</groupId>
-            <artifactId>sourcewriter</artifactId>
-            <version>0.1</version>
+            <groupId>com.failsfast</groupId>
+            <artifactId>nba-pojo-builder</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -133,16 +125,15 @@
                 <executions>
                     <execution>
                         <id>builderGenerator</id>
-                        <phase>generate-sources</phase>
+                        <phase>generate-test-sources</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>com.nbastat.player.generators.DomainBuildersGeneratorMain</mainClass>
+                            <mainClass>com.failsfast.generators.DomainBuildersGeneratorMain</mainClass>
                             <arguments>
-                                <argument>src/main/java/com/nbastat/player/domain</argument>
-                                <argument>src/main/java/com/nbastat/player/generators/domain</argument>
-                                <argument>src/main/java/com/nbastat/player/domain/repository/responses</argument>
+                                <argument>nba-stat-endpoints/src/main/java/com/failsfast/nbastatendpoints/domain</argument>
+                                <argument>nba-stat-endpoints/src/main/java/com/failsfast/nbastatendpoints/domain/repository/responses</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -153,10 +144,62 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>com.nbastat.player.generators.ApiGeneratorMain</mainClass>
+                            <mainClass>com.failsfast.generators.ApiGeneratorMain</mainClass>
                             <arguments>
                                 <argument>nbaStat.json</argument>
                             </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/main/generated/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add-test-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src/test/generated/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <!-- here the phase you need -->
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/resources</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/src/main/resources</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
                         </configuration>
                     </execution>
                 </executions>
