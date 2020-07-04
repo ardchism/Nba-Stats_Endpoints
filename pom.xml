@@ -12,6 +12,10 @@
   <url>http://www.failsfast.com</url>
   <packaging>pom</packaging>
 
+  <modules>
+    <module>nba-stat-endpoints</module>
+  </modules>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
