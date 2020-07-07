@@ -1,0 +1,11 @@
+service:
+  externalPort: 8080
+  internalPort: 8080
+livenessProbe:
+  initialDelaySeconds: 30
+  timeoutSeconds: 30
+  path: /actuator/health
+readinessProbe:
+  path: /actuator/health
+  initialDelaySeconds: 15
+  timeoutSeconds: 15

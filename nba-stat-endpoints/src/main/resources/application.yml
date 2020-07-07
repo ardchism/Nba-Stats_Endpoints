@@ -9,3 +9,12 @@ requestheaders:
     User-Agent: "Mozilla/5.0 (X11; Fedora; Linu…) Gecko/20100101 Firefox/59.0"
     x-nba-stats-origin: "stats"
     x-nba-stats-token: "true"
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
