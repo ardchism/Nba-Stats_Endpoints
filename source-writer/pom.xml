@@ -19,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.roaster>2.20.1.Final</version.roaster>
-        <version.junit>4.12</version.junit>
+        <version.junit>4.13.1</version.junit>
         <version.assertj>3.11.1</version.assertj>
         <version.apachecommons>3.8.1</version.apachecommons>
         <maven.compiler.source>1.8</maven.compiler.source>
